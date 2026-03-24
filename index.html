@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Zanzibaba Building Materials Supplier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                purple: '#5A2A82',
+                yellow: '#F2A900',
+                dark: '#1a1a1a',
+                light: '#f4f4f5'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Poppins', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+      }
+      html {
+        scroll-behavior: smooth;
+        /* Fix for sticky header covering content on scroll anchor navigation */
+        scroll-padding-top: 6rem;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Robust smooth scrolling for anchor links
+      document.addEventListener('click', function(e) {
+        // Find closest anchor tag
+        const anchor = e.target.closest('a');
+        
+        // If it's an anchor and points to an ID on this page
+        if (anchor && anchor.getAttribute('href')?.startsWith('#')) {
+          e.preventDefault();
+          const targetId = anchor.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          
+          if (targetElement) {
+            targetElement.scrollIntoView({
+              behavior: 'smooth'
+            });
+            // Removed history.pushState to prevent SecurityError in sandboxed environments
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
